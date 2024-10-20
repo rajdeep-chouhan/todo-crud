@@ -27,7 +27,7 @@ const getTodo = expressAsyncHandler(async (req, res) => {
 const addTodo = expressAsyncHandler(async (req, res) => {
   const { title, description, isPublished, author } = req.body;
 
-  if (!title || !description || !author) {
+  if (!title || !description ) {
     res.status(401);
     throw new Error("Please fill All Details");
   }
@@ -36,8 +36,7 @@ const addTodo = expressAsyncHandler(async (req, res) => {
   const newTodo = await Todo.create({
     title,
     description,
-    isPublished,
-    author,
+    
   });
   if (!newTodo) {
     res.status(401);
