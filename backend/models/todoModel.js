@@ -12,12 +12,12 @@ const todoSchema = new mongoose.Schema(
     },
     isPublished: {
       type: Boolean,
-      required: true,
+      required: false,
       default: false,
     },
     author: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   {
